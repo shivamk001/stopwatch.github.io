@@ -2,17 +2,17 @@ const play=document.getElementById('start')
 const reset=document.getElementById('reset')
 const minute=document.getElementById('minute')
 const second=document.getElementById('second')
-
+const point=document.getElementById('point')
 var id, secCount, prevSecCount,minCount, prevMinCount, playButtonStatus;
 
 
 //IDEAS 
 //1. TELL HOW MANY HOURS PASSED SINCE START OF THE STOPWATCH
-//2. A TRIANGLE ICON IN PLACE OF A START BUTTON <i class="fa-solid fa-play"></i> <i class="fa-solid fa-play-pause"></i>
-//3. A PAUSE ICON(||) IN PLACE OF STOP BUTTON <i class="fa-solid fa-pause"></i>
-//4. A REFRESH ICON IN PLACE OF RESET BUTTON <i class="fa-solid fa-arrows-rotate"></i>
-//5. A HOVER WHICH TELLS US ABOUT THE BUTTON
-//6. SOLVE THE ANOMOLY ENCOUNTERED WHEN START BUTTON IS CLICKED WHEN THE STOPWATCH IS RUNNING
+//2. A TRIANGLE ICON IN PLACE OF A START BUTTON <i class="fa-solid fa-play"></i> <i class="fa-solid fa-play-pause"></i>-done
+//3. A PAUSE ICON(||) IN PLACE OF STOP BUTTON <i class="fa-solid fa-pause"></i>-done
+//4. A REFRESH ICON IN PLACE OF RESET BUTTON <i class="fa-solid fa-arrows-rotate"></i>-done
+//5. A HOVER WHICH TELLS US ABOUT THE BUTTON-done
+//6. SOLVE THE ANOMOLY ENCOUNTERED WHEN START BUTTON IS CLICKED WHEN THE STOPWATCH IS RUNNING-done
 
 
 
@@ -20,6 +20,11 @@ var id, secCount, prevSecCount,minCount, prevMinCount, playButtonStatus;
     prevMinCount=0;
     prevSecCount=0;
     playButtonStatus='play'
+    prevAngle=0;
+    angle=6
+    point.style.position='absolute';
+    point.style.top='0%';
+    point.style.left='50%';
 })()
 
 
@@ -31,6 +36,7 @@ play.addEventListener('click',function(req, res){
         minCount=prevMinCount;
         let min, sec;
 
+
         play.innerHTML=
         `<i class="fa-solid fa-pause"></i>
         <div class="cloud">Pause</div>`
@@ -38,10 +44,17 @@ play.addEventListener('click',function(req, res){
 
         id=setInterval(function(){
             secCount++;
-            if(secCount==59){
+            if(secCount==60){
                 secCount=0;
                 minCount++;
             }
+
+            console.log(`sec: ${secCount}, angle: ${angle}, prevangle: ${prevAngle}`)
+            let angleStr=angle+'deg'
+            point.style.transform=`rotate(${angleStr})`
+            console.log(`angle: ${angle}, ${point.style.transform}`)
+            prevAngle=angle
+            angle=prevAngle+6;
             
             if(secCount<10){
                 sec='0'+secCount
@@ -91,4 +104,5 @@ reset.addEventListener('click',function(req, res){
     play.innerHTML=
     `<i class="fa-solid fa-play"></i>
     <div class="cloud">Play</div>`
+    point.style.transform=`rotate(0deg)`
 })
