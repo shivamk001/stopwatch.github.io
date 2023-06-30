@@ -9,38 +9,52 @@
 </head>
 <body>
     <div class="main">
-        <div class="inner_main">
-            <div class="time">
-                <div id="minute">
-                    <p>00</p>
-                </div>
-                <div id="colon"><p>:</p></div>
-                <div id="second">
-                    <p>00</p>
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="start" class="button">
-                    <i class="fa-solid fa-play"></i>
-                    <div class="cloud">
-                        Play
+        <div class="watch">
+
+            <div class="inner_main">
+                    <div id="minute">
+                        <div class="font">Min</div>
+                        <div class="font">00</div>
                     </div>
-                </button>
-                <button id="reset" class="button">
-                    <i class="fa-solid fa-arrows-rotate"></i>
-                    <div class="cloud">
-                        Reset
+                    <div id="colon"><p>:</p></div>
+                    <div id="second">
+                        <div class="font">Sec</div>
+                        <div class="font" >00</div>
                     </div>
-                </button>
             </div>
+
+            <div id="arm" class="arm">
+                <div id="pivot" class="pivot"></div>
+            </div>
+
+            <div id="zero">
+            </div>
+            <div id="three">
+            </div>
+            <div id="six">
+            </div>
+            <div id="nine">
+            </div>
+            <div style="position: absolute;top: 10%; left: 49%; color: #74F0ED;">0</div>
+            <div style="position: absolute;top: 48%; left: 85%;color: #74F0ED;">15</div>
+            <div style="position: absolute;top: 85%; left: 48%;color: #74F0ED;">30</div>
+            <div style="position: absolute;top: 48%; left: 10%;color: #74F0ED;">45</div>
         </div>
 
-        <div id="point" class="point">
-            <div id="pivot" class="pivot"></div>
+        <div class="buttons">
+            <button id="start" class="button">
+                <i class="fa-solid fa-play"></i>
+                <div class="cloud">
+                    Play
+                </div>
+            </button>
+            <button id="reset" class="button">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <div class="cloud">
+                    Reset
+                </div>
+            </button>
         </div>
-
-        <div id="hor"></div>
-        <div id="ver"></div>
     </div>
     <script type="text/javascript" src="script.js"></script>
 </body>

@@ -2,7 +2,7 @@ const play=document.getElementById('start')
 const reset=document.getElementById('reset')
 const minute=document.getElementById('minute')
 const second=document.getElementById('second')
-const point=document.getElementById('point')
+const arm=document.getElementById('arm')
 var id, secCount, prevSecCount,minCount, prevMinCount, playButtonStatus;
 
 
@@ -22,9 +22,9 @@ var id, secCount, prevSecCount,minCount, prevMinCount, playButtonStatus;
     playButtonStatus='play'
     prevAngle=0;
     angle=6
-    point.style.position='absolute';
-    point.style.top='0%';
-    point.style.left='50%';
+    arm.style.position='absolute';
+    arm.style.top='0%';
+    arm.style.left='50%';
 })()
 
 
@@ -51,8 +51,8 @@ play.addEventListener('click',function(req, res){
 
             console.log(`sec: ${secCount}, angle: ${angle}, prevangle: ${prevAngle}`)
             let angleStr=angle+'deg'
-            point.style.transform=`rotate(${angleStr})`
-            console.log(`angle: ${angle}, ${point.style.transform}`)
+            arm.style.transform=`rotate(${angleStr})`
+            console.log(`angle: ${angle}, ${arm.style.transform}`)
             prevAngle=angle
             angle=prevAngle+6;
             
@@ -70,8 +70,8 @@ play.addEventListener('click',function(req, res){
                 min=minCount
             }
             console.log(`SECOND: ${sec}, MINUTE: ${min}`)
-            minute.innerHTML=`<p>${min}</p>`
-            second.innerHTML=`<p>${sec}</p>`
+            minute.innerHTML=`<div class="font">Min</div><div class="font">${min}</div>`
+            second.innerHTML=`<div class="font">Sec</div><div class="font">${sec}</div>`
         },1000)
 
     }
@@ -99,10 +99,12 @@ reset.addEventListener('click',function(req, res){
     prevSecCount=0;
     minCount=0;
     secCount=0;
-    minute.innerHTML=`<p>00</p>`
-    second.innerHTML=`<p>00</p>`
+    minute.innerHTML=`<div class="font">Min</div><div class="font">00</div>`
+    second.innerHTML=`<div class="font">Sec</div><div class="font">00</div>`
     play.innerHTML=
     `<i class="fa-solid fa-play"></i>
     <div class="cloud">Play</div>`
-    point.style.transform=`rotate(0deg)`
+    arm.style.transform=`rotate(0deg)`
+    playButtonStatus='play'
+    angle=6
 })

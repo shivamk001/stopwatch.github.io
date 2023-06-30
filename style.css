@@ -1,30 +1,99 @@
 body{
-    font-size: sans-serif;
+    font-family: sans-serif;
+    /* background-color: blue;
+} */
 }
 .main{
     position: relative;
     top: 50%;
-    left: 40%;
-    width: 300px;
-    height: 300px;
-    border:2px solid black;
-    /* border-radius: 50%; */
+    left: 35%;
+    width: 25vw;
+    height: 25vw;
+    border:2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 1rem;
 }
 
-.point{
+.watch{
+    width: 90%;
+    height: 90%;
+    border: 2px solid #EA445A;
+    border-radius: 50%;
+    position: relative;
+    background-color: #000000;
+}
+
+.arm{
     height: 50%;
     width: 1px;
     /* background-color: black; */
     /* border-left: 1px solid black; */
-    border-right: 1px solid black;
+    border-right: 1px solid white;
     /* border-bottom: 1px solid black; */
-    border-top: 1px solid red;
+    border-top: 1px solid white;
     z-index: 2;
-    position: absolute;
+    position: relative;
     top: 0%;
     left: 50%;
-    transform-origin: 49% 100%;
+    transform-origin: 50% 100%;
     transform: rotate(0deg);
+}
+
+.pivot{
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    height: 1px;
+    width: 1px;
+    border: 2px solid #EA445A;
+    border-radius: 50%;
+}
+
+#zero{
+    position: absolute;
+    top: 0%;
+    left: 50%;;
+    border-color: #74F0ED;
+    height: 10%;
+    width: 1px;
+    background-color: #74F0ED;
+    color: #74F0ED;
+}
+
+#three{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    border-color: #74F0ED;
+    width: 10%;
+    height: 1px;
+    background-color: #74F0ED;
+    color: #74F0ED;
+}
+
+#six{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    border-color: #74F0ED;
+    height: 10%;
+    width: 1px;
+    background-color: #74F0ED;
+    color: #74F0ED;
+}
+
+#nine{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    border-color: #74F0ED;
+    width: 10%;
+    height: 1px;
+    background-color: #74F0ED;
+    color: #74F0ED;
 }
 
 #hor{
@@ -44,29 +113,21 @@ body{
 
 .inner_main{
     position: absolute;
-    top: 30%;
+    top: 60%;
     left: 40%;
-    height: 100px;
-}
-
-
-.time{
+    height: 15%;
+    width: 20%;
+    color: white;
+    /* background-color: #EA445A; */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    margin-bottom: 10px;
 }
 
-#minute, #colon, #second{
-    font-size: 2rem;
-    height: 70px;
-    margin: 0;
-}
-
-#colon{
-    padding-bottom: 5px;
+.font{
+    font-size: 100%;
+    text-align: center;
 }
 
 .button{
@@ -74,20 +135,28 @@ body{
     width: 30px;
     border-radius: 50%;
     color: forestgreen;
-    background-color: white;
+    background-color: black;
     position: relative;
+    border: 2px solid #EA445A;
+}
+
+.button i{
+    color: #74F0ED;
 }
 #reset{
     margin-left: 10px;
 }
 
 .cloud{
-    color: black;
+    color: #74F0ED;
     position: absolute;
     top: 150%;
     left: 0%;
     display: none;
     border: 1px solid black;
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 1rem;
 }
 
 .button:hover .cloud{
