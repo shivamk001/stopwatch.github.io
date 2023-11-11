@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>STOPWATCH</h1>
     <div class="main">
+
+        <!-- the circle -->
         <div class="watch">
 
+            <!-- displays the minutes and seconds -->
             <div class="inner_main">
                     <div id="minute">
                         <div class="font">Min</div>
                         <div class="font">00</div>
                     </div>
                     <div id="colon">
-                        <div class="font">&nbsp</div>
-                        <div class="font">:</div>
+                        <div class="font">&nbsp;</div>
+                        <div class="font" >:</div>
                     </div>
                     <div id="second">
                         <div class="font">Sec</div>
@@ -44,21 +48,33 @@
             <div style="position: absolute;top: 48%; left: 10%;color: #74F0ED;">45</div>
         </div>
 
+
+        <!-- contains the start/stop and reset buttons -->
         <div class="buttons">
-            <button id="start" class="button">
-                <i class="fa-solid fa-play"></i>
-                <div class="cloud">
-                    Play
-                </div>
-            </button>
-            <button id="reset" class="button">
-                <i class="fa-solid fa-arrows-rotate"></i>
-                <div class="cloud">
+            <div id="startDiv" style="height: 100%; width: 10%;  position: relative;">
+                <button id="start" class="button">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+                <div id="playCloud" class="cloud">
+                    Start
+                </div> 
+            </div>
+
+            <div id="resetDiv" style="height: 100%; width: 10%; position: relative;">
+                <button id="reset" class="button">
+                    <i class="fa-solid fa-arrows-rotate"></i>
+                </button>
+                <div id="resetCloud" class="cloud">
                     Reset
-                </div>
-            </button>
+                </div> 
+            </div>
+    
+        </div>
+
         </div>
     </div>
+
+
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>

@@ -1,15 +1,22 @@
 body{
     font-family: sans-serif;
-    font-size: 8px;
-    /* background-color: blue;
-} */
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A244A;
+}
+
+h1{
+    color: white;
 }
 .main{
-    position: relative;
-    top: 50%;
-    left: 35%;
-    width: 25vw;
-    height: 25vw;
+    width: 50vh;
+    height: 50vh;
     border:2px solid red;
     display: flex;
     flex-direction: column;
@@ -47,8 +54,10 @@ body{
     position: absolute;
     top: 100%;
     left: 0%;
-    height: 1px;
-    width: 1px;
+    /* height: 1px;
+    width: 1px; */
+    height: 1%;
+    width: 1%;
     border: 2px solid #EA445A;
     border-radius: 50%;
 }
@@ -127,122 +136,111 @@ body{
 }
 
 .font{
-    font-size: 100%;
     text-align: center;
 }
+
+
 .buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
     height: 10%;
 }
+
+
 .button{
-    height: 2rem;
-    width: 2rem;
+    /* height: 30px;
+    width: 30px; */
+    height: 100%;
+    width: 100%;
     border-radius: 50%;
+    color: forestgreen;
     background-color: black;
-    position: relative;
-    border: 2px solid #EA445A;
+    /* position: relative; */
+    border: 1px solid #EA445A;
+    cursor: pointer;
+    /* position: relative; */
+    border: 1px solid #EA445A;
+    cursor: pointer;
 }
 
 .button i{
     color: #74F0ED;
 }
 #reset{
-    margin-left: 10px;
+    margin-left: 15%;
 }
 
 .cloud{
     color: #74F0ED;
-    position: absolute;
-    top: 150%;
-    left: 0%;
+    /* visibility: hidden; */
+    /* visibility: hidden; */
     display: none;
     border: 1px solid black;
     background-color: #000000;
     padding: 5px;
-    border-radius: 1rem;
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    /* z-index: 100; */
+
+    position: absolute;
+    top: 110%;
+    border-radius: 6px;
+    height: auto;
+    width: auto;
+    /* z-index: 100; */
+
+    position: absolute;
+    top: 110%;
 }
 
-.button:hover .cloud{
-    display: flex;
+
+#startDiv:hover .cloud{
+    /* visibility: visible; */
+    display: block;
 }
 
-@media (min-width:280px)  { 
-    /* smartphones, iPhone, portrait 480x320 phones */ 
+#resetDiv:hover .cloud{
+    /* visibility: visible; */
+    display: block;
+}
+
+
+@media screen and (min-height: 300px) {
     body{
-        font-family: sans-serif;
-        font-size: 14px;
-        /* background-color: blue;
-    } */
+        font-size: x-small;
     }
-    .main{
-        position: relative;
-        top: 50%;
-        left: 35%;
-        width: 90vw;
-        height: 90vw;
-        border:2px solid red;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        border-radius: 1rem;
-    }
-
-    .buttons{
-        height: 10%;
-    }
-    .button{
-        height: 1.5rem;
-        width: 1.5rem;
-        border-radius: 50%;
-        background-color: black;
-        position: relative;
-        border: 2px solid #EA445A;
-    }
+    
 }
 
-@media (min-width:320px)  { 
-    /* smartphones, iPhone, portrait 480x320 phones */ 
+@media screen and (min-height: 500px) {
     body{
-        font-family: sans-serif;
-        font-size: 16px;
-        /* background-color: blue;
-    } */
+        font-size: small;
     }
-    .main{
-        position: relative;
-        top: 50%;
-        left: 35%;
-        width: 90vw;
-        height: 90vw;
-        border:2px solid red;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        border-radius: 1rem;
-    }
+    
 }
 
-
-@media (min-width:961px)  { 
-    /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+@media screen and (min-height: 700px) {
     body{
-        font-family: sans-serif;
-        font-size: 14px;
-        /* background-color: blue;
-    } */
+        font-size: large;
     }
-    .main{
-        position: relative;
-        top: 50%;
-        left: 35%;
-        width: 50vh;
-        height: 50vh;
-        border:2px solid red;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        border-radius: 1rem;
+    
+}
+
+@media screen and (min-height: 900px) {
+    body{
+        font-size: x-large;
     }
+    
+}
+
+@media screen and (min-height: 1100px) {
+    body{
+        font-size: xx-large;
+    }
+    
 }
